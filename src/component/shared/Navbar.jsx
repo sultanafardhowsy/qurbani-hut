@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
+
 const Navbar = () => {
     return (
         <nav className="bg-white border-b-2 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
@@ -18,7 +19,7 @@ const Navbar = () => {
     
     <div className='flex justify-between gap-4'>
 <button className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
-      Log In
+       <Link href={'/login'}>Log In</Link>
     </button>
     <button className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
       Register

@@ -4,7 +4,7 @@ const BannerPage = () => {
     return (
         <div>
          Banner page   
-         
+         <button className='btn'>All Animals</button>
         </div>
     );
 };
