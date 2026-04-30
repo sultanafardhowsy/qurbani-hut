@@ -2,7 +2,7 @@ const FeaturedCard = async () => {
   const res = await fetch('https://qurbani-hut-rho.vercel.app/data.json');
   const data = await res.json();
   
-  const targetIds = [1, 5, 10, 9];
+  const targetIds = [2, 5, 10, 9];
   const featuredAnimal = data.filter(animal => targetIds.includes(animal.id));
 
   return (

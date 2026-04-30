@@ -48,7 +48,7 @@
     "age": 2,
     "location": "Khulna",
     "description": "Popular Black Bengal goat known for premium meat quality.",
-    "image": "https://i.postimg.cc/example-goat1.jpg",
+    "image": "https://i.ibb.co.com/dJGRjvph/goat3.webp",
     "category": "Small Animal"
   },
   {
@@ -61,7 +61,7 @@
     "age": 3,
     "location": "Sylhet",
     "description": "Large Jamunapari goat with strong body and healthy growth.",
-    "image": "https://i.postimg.cc/example-goat2.jpg",
+    "image": "https://i.ibb.co.com/bRWs6BHt/goat1.jpg",
     "category": "Small Animal"
   },
   {
@@ -74,7 +74,7 @@
     "age": 3,
     "location": "Barisal",
     "description": "Imported Boer goat famous for fast growth and high meat yield.",
-    "image": "https://i.postimg.cc/example-goat3.jpg",
+    "image": "https://i.ibb.co.com/zhS4dHPT/goat2.webp",
     "category": "Small Animal"
   },
   {
@@ -87,7 +87,7 @@
     "age": 2,
     "location": "Chattogram",
     "description": "Healthy local sheep suitable for Qurbani and farming.",
-    "image": "https://i.postimg.cc/example-sheep1.jpg",
+    "image": "https://i.ibb.co.com/Mk20v32G/sheep1.jpg",
     "category": "Medium Animal"
   },
   {
@@ -100,7 +100,7 @@
     "age": 2,
     "location": "Mymensingh",
     "description": "Strong Garole sheep with quality wool and meat.",
-    "image": "https://i.postimg.cc/example-sheep2.jpg",
+    "image": "https://i.ibb.co.com/TqWL9sBy/sheep2.webp",
     "category": "Medium Animal"
   },
   {
@@ -113,7 +113,7 @@
     "age": 3,
     "location": "Rangpur",
     "description": "Premium Merino sheep known for excellent wool and healthy size.",
-    "image": "https://i.postimg.cc/example-sheep3.jpg",
+    "image": "https://i.ibb.co.com/wFy16Txx/sheep3.webp",
     "category": "Medium Animal"
   },
   {
@@ -126,7 +126,7 @@
     "age": 6,
     "location": "Dhaka",
     "description": "Strong Arabian camel imported for premium Qurbani market.",
-    "image": "https://i.postimg.cc/example-camel1.jpg",
+    "image": "https://i.ibb.co.com/9mwBx3CR/camel3.jpg",
     "category": "Premium Animal"
   },
   {
@@ -139,7 +139,7 @@
     "age": 7,
     "location": "Bogura",
     "description": "Large Bactrian camel with excellent health and majestic appearance.",
-    "image": "https://i.postimg.cc/example-camel2.jpg",
+    "image": "https://i.ibb.co.com/r28VxJbq/camel1.jpg",
     "category": "Premium Animal"
   },
   {
@@ -152,7 +152,7 @@
     "age": 8,
     "location": "Rajshahi",
     "description": "Premium quality royal camel suitable for large-scale Qurbani.",
-    "image": "https://i.postimg.cc/example-camel3.jpg",
+    "image": "https://i.ibb.co.com/8Lgw17Yn/camel2.jpg",
     "category": "Premium Animal"
   }
 ]
