@@ -8,7 +8,7 @@
     "weight": 280,
     "age": 3,
     "location": "Bogura",
-    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural খাবার.",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural feed.",
     "image": "https://i.postimg.cc/example-cow1.jpg",
     "category": "Large Animal"
   },
@@ -22,7 +22,7 @@
     "age": 4,
     "location": "Dhaka",
     "description": "Imported Friesian cow with excellent health and high meat quality.",
-    "image": "https://i.postimg.cc/example-cow2.jpg",
+    "image": "https://i.ibb.co.com/Cs1Vg5WN/cow3.avif",
     "category": "Large Animal"
   },
   {
@@ -35,7 +35,7 @@
     "age": 5,
     "location": "Rajshahi",
     "description": "Premium Sahiwal cow known for superior size and healthy growth.",
-    "image": "https://i.postimg.cc/example-cow3.jpg",
+    "image": "https://i.ibb.co.com/jjy4jVJ/cow2.jpg",
     "category": "Large Animal"
   },
   {
