@@ -1,3 +1,4 @@
+import Image from "next/image";
 const FeaturedCard = async () => {
   const res = await fetch('https://qurbani-hut-rho.vercel.app/data.json');
   const data = await res.json();
@@ -13,9 +14,11 @@ const FeaturedCard = async () => {
           /* The 'card' class is essential for daisyUI styling */
           <div key={animal.id} className="card bg-base-100 shadow-xl border border-base-200">
             <figure className="px-4 pt-4">
-              <img
+              <Image
                 src={animal.image} 
                 alt={animal.name}
+                width={400}
+                height={400}
                 className="rounded-xl h-48 w-full object-cover"
               />
             </figure>
