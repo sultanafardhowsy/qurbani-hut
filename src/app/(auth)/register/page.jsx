@@ -29,7 +29,7 @@ const RegisterPage = () => {
 
 
     return (
-        <div className='container mx-auto bg-slate-100 h-[80vh] flex justify-center items-center'>
+        <div className='container mx-auto bg-[#C9A227] h-[80vh] flex justify-center items-center px-4 mt-10'>
             <div className='p-4 rounded-xl bg-white'>
                 <h2 className='text-3xl  text-center font-bold mb-5'>Register your account</h2>
                 <form onSubmit={handleSubmit(handleRegisterFunc)}>
