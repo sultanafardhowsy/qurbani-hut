@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import userAvatar from "@/assets/user.png";
+import logo from "@/assets/qurbani.png"
 
 
 const Navbar = () => {
@@ -18,8 +19,16 @@ const Navbar = () => {
     <nav className="bg-white border-b-2 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2 text-2xl font-bold text-[#0F3D2E]">
-          <span>🌙</span>
-          <span><span className="text-[#C9A227]">Qurbani</span>Hat</span>
+          {/* <span>🌙</span>
+          <span><span className="text-[#C9A227]">Qurbani</span>Hat</span> */}
+          <Image
+            src={logo}
+            alt="logo"
+            loading="eager"
+            width={400}
+            height={350}
+            className="object-cover h-auto w-auto"
+          />
         </div>
 
         <div className="hidden md:flex gap-8 text-[#0F3D2E] font-semibold">
