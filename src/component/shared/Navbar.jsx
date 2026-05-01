@@ -1,73 +1,163 @@
-'use client'
+'use client';
+
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import userAvatar from "@/assets/user.png";
-import logo from "@/assets/qurbani.png"
-
+import logo from "@/assets/qurbani1.png";
 
 const Navbar = () => {
   const { data: session, isPending } = authClient.useSession();
-
-  console.log(session, "session");
-
   const user = session?.user;
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  console.log(user, "user");
   return (
     <nav className="bg-white border-b-2 border-[#D4AF37] sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-2xl font-bold text-[#0F3D2E]">
-          {/* <span>🌙</span>
-          <span><span className="text-[#C9A227]">Qurbani</span>Hat</span> */}
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-3 md:py-4 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
           <Image
             src={logo}
             alt="logo"
-            loading="eager"
-            width={400}
-            height={350}
-            className="object-cover h-auto w-auto"
+            width={200}
+            height={150}
+            className="object-contain w-[100px] sm:w-[130px] md:w-[160px] lg:w-[200px]"
           />
+        </Link>
+
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex md:gap-4 lg:gap-8 text-[#0F3D2E] font-semibold text-sm md:text-base lg:text-lg">
+          <Link href="/" className="hover:text-[#C9A227] transition-colors">
+            Home
+          </Link>
+          <Link
+            href="/all-animals"
+            className="hover:text-[#C9A227] transition-colors"
+          >
+            All Animals
+          </Link>
         </div>
 
-        <div className="hidden md:flex gap-8 text-[#0F3D2E] font-semibold">
-          <Link href="/" className="hover:text-[#C9A227] transition-colors">Home</Link>
-          <Link href="/all-animals" className="hover:text-[#C9A227] transition-colors">All Animals</Link>
+        {/* Desktop User/Auth */}
+        <div className="hidden md:flex items-center gap-2 lg:gap-4">
+          {isPending ? (
+            <span className="text-[#0F3D2E] text-sm md:text-base">
+              Loading...
+            </span>
+          ) : user ? (
+            <>
+              <h2 className="hidden lg:block font-semibold text-[#0F3D2E] text-sm lg:text-base">
+                {user.name}
+              </h2>
 
+              <Image
+                src={userAvatar}
+                alt="User avatar"
+                width={40}
+                height={40}
+                className="rounded-full md:w-[40px] lg:w-[50px]"
+              />
+
+              <button
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-3 sm:px-4 md:px-5 lg:px-6 py-2 rounded-lg font-bold shadow-md text-xs sm:text-sm md:text-base"
+                onClick={async () => await authClient.signOut()}
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <div className="flex gap-2 lg:gap-4">
+              <Link
+                href="/login"
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-3 sm:px-4 md:px-5 lg:px-6 py-2 rounded-lg font-bold shadow-md text-xs sm:text-sm md:text-base"
+              >
+                Log In
+              </Link>
+
+              <Link
+                href="/register"
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-3 sm:px-4 md:px-5 lg:px-6 py-2 rounded-lg font-bold shadow-md text-xs sm:text-sm md:text-base"
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
 
-       
-        {isPending ? ("Loading...") : user ? (
-          <div className="flex items-center gap-2">
-            <h2>{user.name}</h2>
-
-            <Image
-              src={userAvatar}
-              alt="User avatar"
-              width={60}
-              height={60}
-            />
-            <button className="btn bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md"
-              onClick={async () => await authClient.signOut()}>
-              Log out
-            </button>
-          </div>
-
-        ) : (
-          
-           <div className='flex justify-between gap-4'>
-          <button className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
-            <Link href={'/login'}>Log In</Link>
-          </button>
-          <button className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
-            <Link href={"/register"}>Register</Link>
-          </button>
-
-        </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-[#0F3D2E] text-2xl sm:text-3xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
       </div>
 
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-[#D4AF37] px-4 sm:px-6 py-4 space-y-4 shadow-lg">
+
+          {/* Mobile Links */}
+          <div className="flex flex-col gap-3 text-[#0F3D2E] font-semibold text-sm sm:text-base">
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+            <Link href="/all-animals" onClick={() => setMenuOpen(false)}>
+              All Animals
+            </Link>
+          </div>
+
+          {/* Mobile User/Auth */}
+          {isPending ? (
+            <span className="block text-[#0F3D2E]">Loading...</span>
+          ) : user ? (
+            <div className="flex flex-col gap-3 pt-3 border-t">
+              <div className="flex items-center gap-3">
+                <Image
+                  src={userAvatar}
+                  alt="User avatar"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <h2 className="font-semibold text-[#0F3D2E] text-sm sm:text-base">
+                  {user.name}
+                </h2>
+              </div>
+
+              <button
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] text-[#0F3D2E] px-4 py-2 rounded-lg font-bold shadow-md text-sm"
+                onClick={async () => {
+                  await authClient.signOut();
+                  setMenuOpen(false);
+                }}
+              >
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3 pt-3 border-t">
+              <Link
+                href="/login"
+                onClick={() => setMenuOpen(false)}
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] text-[#0F3D2E] px-4 py-2 rounded-lg font-bold shadow-md text-center text-sm"
+              >
+                Log In
+              </Link>
+
+              <Link
+                href="/register"
+                onClick={() => setMenuOpen(false)}
+                className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] text-[#0F3D2E] px-4 py-2 rounded-lg font-bold shadow-md text-center text-sm"
+              >
+                Register
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
     </nav>
   );
 };
