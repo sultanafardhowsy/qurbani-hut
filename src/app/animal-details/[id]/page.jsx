@@ -2,6 +2,7 @@ import Image from "next/image";
 
 const AnimalDetails = async ({ params }) => {
   const { id } = await params; // ✅ unwrap params
+  console.log(id,'from details');
 
   const res = await fetch("https://qurbani-hut-rho.vercel.app/data.json");
   const data = await res.json();
