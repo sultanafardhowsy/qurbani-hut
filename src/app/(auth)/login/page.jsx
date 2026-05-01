@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 
 const LoginPage = () => {
 
-    const { register, handleSubmit,watch,formState:{errors} } = useForm()
+    const { register, handleSubmit,formState:{errors} } = useForm()
 
     const handleLoginFunc = async(data) => {
         console.log(data, "data");
@@ -17,13 +17,13 @@ const LoginPage = () => {
     rememberMe: true,
     callbackURL: "/",
 });
-console.log(res,error);  
+ 
     }
    
 
     return (
-        <div className='container mx-auto bg-slate-100 h-[80vh] flex justify-center items-center'>
-            <div className='p-4 rounded-xl bg-white'>
+        <div className='container mx-auto bg-[#C9A227] h-[60vh] flex justify-center items-center mt-15'>
+            <div className='p-4 rounded-xl bg-[#C9A227]'>
                 <h2 className='text-3xl  text-center font-bold mb-5'>Login your account</h2>
                 <form onSubmit={handleSubmit(handleLoginFunc)}>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
@@ -44,7 +44,7 @@ console.log(res,error);
                     </fieldset>
                      <button  className="btn btn-neutral mt-4">Login</button>
                 </form>
-                <p className='mt-5'>Don't have an account? <Link href={"/register"} className='text-blue-400'>Register</Link></p>
+                <p className='mt-5'>Don't have an account? <Link href={"/register"} className='text-blue-700'>Register</Link></p>
             </div>
         </div>
     );
