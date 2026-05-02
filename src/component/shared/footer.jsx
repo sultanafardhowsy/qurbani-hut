@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className='px-10'>
             <h3 className="text-lg font-bold text-black mb-4">
               Contact Info
             </h3>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div>
+          <div className='px-10'>
             <h3 className="text-lg font-bold text-black mb-4">
               Follow Us
             </h3>
