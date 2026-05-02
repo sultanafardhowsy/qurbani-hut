@@ -1,9 +1,11 @@
 'use client'
 
 import { authClient } from '@/lib/auth-client';
+import { Check } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { GrGoogle } from 'react-icons/gr';
 
 const LoginPage = () => {
 
@@ -19,6 +21,13 @@ const LoginPage = () => {
 });
  
     }
+
+    const handlGoogleSignIn = async () => {
+   const data= await authClient.signIn.social({
+        provider: 'google'
+    })
+    console.log(data);
+  }
    
 
     return (
@@ -42,8 +51,21 @@ const LoginPage = () => {
                             {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
 
                     </fieldset>
-                     <button  className="btn btn-neutral mt-4">Login</button>
+                    
+                     <div className="flex gap-2 mt-4">
+          <button type="submit" className='btn btn-neutral'>
+            <Check />
+            Submit
+          </button>
+          <button type="reset" className='btn btn-neutral'>
+            Reset
+          </button>
+        </div>
                 </form>
+                <p className="text-center">Or</p>
+
+      <button onClick={handlGoogleSignIn}  className="btn btn-neutral"><GrGoogle/> Sign In With Google</button>
+    
                 <p className='mt-5'>Don't have an account? <Link href={"/register"} className='text-blue-700'>Register</Link></p>
             </div>
         </div>

@@ -53,12 +53,13 @@ const Navbar = () => {
               </h2>
 
               <Image
-                src={userAvatar}
-                alt="User avatar"
-                width={40}
-                height={40}
-                className="rounded-full md:w-[40px] lg:w-[50px]"
-              />
+  src={user?.image || userAvatar}
+  alt={user?.name || "User avatar"}
+  width={40}
+  height={40}
+  className="rounded-full md:w-[40px] lg:w-[50px] object-cover"
+  referrerPolicy="no-referrer"
+/>
 
               <button
                 className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-3 sm:px-4 md:px-5 lg:px-6 py-2 rounded-lg font-bold shadow-md text-xs sm:text-sm md:text-base"
