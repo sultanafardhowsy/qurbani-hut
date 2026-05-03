@@ -1,19 +1,19 @@
 import { NextResponse } from "next/server";
-import { auth } from "./auth";
+import { auth } from "./lib/auth";
 import { headers } from "next/headers";
 
-export async function middleware(request) {
+// This function can be marked `async` if using `await` inside
+export async function proxy(request) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
   if (!session) {
-    return NextResponse.redirect(new URL("/login", request.url));
+   return NextResponse.redirect(new URL('/signin', request.url))
   }
-
-  return NextResponse.next();
 }
 
+
 export const config = {
-  matcher: ["/animal-details/:path*", "/my-profile"],
+  matcher: ["/animal-details/:path*"],
 };

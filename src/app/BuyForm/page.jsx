@@ -33,7 +33,7 @@ export default function BookingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-10">
+   <div className='container mx-auto bg-[#C9A227] h-[80vh] flex justify-center items-center px-4 mt-10'>
       <div className="card w-full max-w-2xl shadow-2xl bg-base-100">
         <div className="card-body">
           <h2 className="text-3xl font-bold text-center mb-6">
@@ -109,7 +109,7 @@ export default function BookingPage() {
             <div className="flex gap-4 pt-4">
               <button
                 type="submit"
-                className="btn btn-primary flex-1"
+                className="btn bg-[#C9A227]"
               >
                 Submit Booking
               </button>
