@@ -7,13 +7,10 @@ export async function proxy(request) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
-  if (!session) {
-   return NextResponse.redirect(new URL('/signin', request.url))
-  }
+  
 }
 
 
 export const config = {
-  matcher: ["/animal-details/:path*"],
+  matcher: ["/animal-details/:path*","/profile"],
 };

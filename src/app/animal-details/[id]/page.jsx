@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAnimals } from "@/lib/get-data";
 
 const AnimalDetails = async ({ params }) => {
-  const { id } = await params; // ✅ unwrap params
+  const { id } = await params; 
   console.log(id,'from details');
 
-  const res = await fetch("https://qurbani-hut-rho.vercel.app/data.json");
-  const data = await res.json();
-
+ const data = await getAnimals();
   const animal = data.find(
     (item) => item.id === Number(id)
   );

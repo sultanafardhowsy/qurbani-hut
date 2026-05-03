@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🐄 Qurbani Hut - Modern Livestock Marketplace
+📌 Project Overview
+Qurbani Hut is a modern, responsive livestock marketplace designed for users to browse and book premium Qurbani animals such as cows and goats. The platform provides secure authentication, detailed animal listings, booking functionality, and user profile management with a visually appealing and unique design.
+This project focuses on providing a seamless user experience across all devices while ensuring modern development standards like environment variable security, route protection, and deployment optimization.
 
-## Getting Started
+🌐 Live Website
+Live URL: https://qurbani-hut-rho.vercel.app/
+Repository: https://github.com/sultanafardhowsy/qurbani-hut
 
-First, run the development server:
 
-```bash
+🎯 Core Features
+🏠 Home Page
+Premium responsive navbar
+Hero banner with call-to-action button
+Featured animals section (4 premium animals)
+Qurbani tips section
+Top breeds showcase
+Additional custom informative section
+Footer with:
+Contact details
+Social media links
+🐐 All Animals Page
+Browse all available animals
+Price sorting functionality
+Detailed animal cards
+Protected details page access
+📄 Animal Details Page (Private Route)
+Complete animal details
+Booking form with:
+Login required before booking
+Success toast notifications
+Auto-reset form after submission
+🔐 Authentication Features
+User Login
+Email/password authentication
+Google social login
+Error toast handling
+Redirect to home page after successful login
+Link to registration page
+User Registration
+Google signup option
+Redirect to login after successful registration
+Validation and error handling
+👤 User Dashboard Features
+My Profile Page
+User profile image
+Name
+Email
+Update Profile
+Update profile image
+Update display name
+Secure Better Auth integration
+✨ Extra Functionalities
+Fully responsive design
+Loading spinner while fetching data
+Custom 404 Not Found page
+Toast notifications
+Route protection
+Secure environment variables
+Modern animations using Lottie / Animate.css / React-Spring
+🛣️ Route Structure
+Public Routes
+/
+/animals
+/login
+/register
+Private Routes
+/details-page
+/my-profile
+/update-profile
+🛠️ Tech Stack
+Frontend
+Next.js
+React.js
+Tailwind CSS
+DaisyUI
+React Hook Form
+React Icons
+Authentication
+Better Auth
+Google OAuth
+Additional Packages
+Lottie / Animate.css / React-Spring
+React Toastify
+Deployment
+Vercel 
+🔒 Security
+🔒 Environment Variables
+Secure keys are stored using .env.local
+
+🚀 Installation Guide
+Clone the repository
+git clone your-repository-link
+Navigate to project folder
+cd qurbani-hut
+Install dependencies
+npm install
+Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📱 Responsiveness
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Mobile Devices
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Tablets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Desktop
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🎨 Unique Design Concept
+A premium livestock marketplace with:
+
+
+Islamic-inspired color palette
+
+
+Gold and green theme
+
+
+Modern card layouts
+
+
+Smooth animations
+
+
+Clean booking process
+
+
+📣 About This Project
+Qurbani Hut was built to simplify online livestock browsing and booking for Qurbani while offering a secure and modern marketplace experience.
+This project demonstrates:
+
+
+Authentication systems
+
+
+Protected routes
+
+
+Responsive UI/UX
+
+
+Form handling
+
+
+Dynamic routing
+
+
+Deployment readiness
+
+
+
+👨‍💻 Developer
+Your Name: Add your name here
+Email: Add your email here
+Portfolio: Add portfolio link here
+

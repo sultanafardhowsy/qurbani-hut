@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-
+import { getAnimals } from "@/lib/get-data";
 const AllAnimals = () => {
   const { data: session } = authClient.useSession();
 
@@ -17,8 +17,7 @@ const AllAnimals = () => {
     const fetchAnimals = async () => {
       try {
         setLoading(true);
-        const res = await fetch("https://qurbani-hut-rho.vercel.app/data.json");
-        const animals = await res.json();
+        const animals = await getAnimals();
         setData(animals);
       } catch (error) {
         console.error("Failed to fetch animals:", error);

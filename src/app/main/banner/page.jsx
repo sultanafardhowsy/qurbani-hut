@@ -24,6 +24,9 @@ const BannerPage = () => {
           alt="Banner Image"
           className="w-full h-auto rounded-lg object-cover"
         />
+        
+
+
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
