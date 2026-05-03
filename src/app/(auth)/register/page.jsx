@@ -3,28 +3,40 @@
 import { authClient } from '@/lib/auth-client';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { GrGoogle } from 'react-icons/gr';
+import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
-
+    const router = useRouter();
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
 
     const handleRegisterFunc = async (data) => {
-
         const { name, email, photo, password } = data;
+
         const { data: res, error } = await authClient.signUp.email({
-            name: name, // required
-            email: email, // required
-            password: password, // required
+            name,
+            email,
+            password,
             image: photo,
-            callbackURL: "/",
-        })
+            callbackURL: "/login",
+        });
 
         if (error) {
-            alert(error.message)
+            alert(error.message);
         }
+
         if (res) {
-            alert('sign-up successfull')
+            alert("Sign-up successful");
+            router.push("/login");
         }
+    };
+
+    const handlGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: 'google',
+            callbackURL: "/",
+        })
+        console.log(data);
     }
 
 
@@ -66,7 +78,10 @@ const RegisterPage = () => {
                         {errors.password && <p className='text-red-500 text-sm'>{errors.password.message}</p>}
 
                     </fieldset>
-                    <button className="btn btn-neutral mt-4">Register</button>
+                    <div className='flex justify-evenly items-center'>
+                        <button className="btn btn-neutral mt-4">Register</button>
+                        <button onClick={handlGoogleSignIn} className="btn btn-neutral mt-3"><GrGoogle /> Sign In With Google</button>
+                    </div>
                 </form>
 
             </div>
