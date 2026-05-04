@@ -6,6 +6,7 @@ import Image from "next/image";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { getAnimals } from "@/lib/get-data";
+import { toast } from "react-toastify";
 const AllAnimals = () => {
   const { data: session } = authClient.useSession();
 
@@ -107,7 +108,7 @@ const AllAnimals = () => {
                 </Link>
               ) : (
                 <button
-                  onClick={() => alert("Please login first")}
+                  onClick={() => toast("Please login first")}
                   className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md"
                 >
                   View Details

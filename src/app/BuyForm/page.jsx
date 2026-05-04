@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function BookingPage() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function BookingPage() {
     e.preventDefault();
     console.log("Booking Data:", formData);
 
-    alert("Booking submitted successfully!");
+    toast("Booking submitted successfully!");
 
     setFormData({
       name: "",
@@ -117,14 +118,15 @@ export default function BookingPage() {
               <button
                 type="reset"
                 className="btn btn-outline flex-1"
-                onClick={() =>
+                onClick={() =>{
                   setFormData({
                     name: "",
                     email: "",
                     phone: "",
                     address: "",
                   })
-                }
+                   toast("Form reset successfully");
+                }}
               >
                 Reset
               </button>

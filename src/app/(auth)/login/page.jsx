@@ -22,13 +22,6 @@ const LoginPage = () => {
  
     }
 
-//     const handlGoogleSignIn = async () => {
-//    const data= await authClient.signIn.social({
-//         provider: 'google'
-//     })
-
-//   }
-
 const handlGoogleSignIn = async () => {
   // show toast BEFORE redirect
   toast.loading("Redirecting to Google...");

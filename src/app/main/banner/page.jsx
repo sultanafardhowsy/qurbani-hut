@@ -111,6 +111,14 @@ const BannerPage = () => {
           >
             Explore Animals
           </Link>
+         
+
+{/* <button
+  onClick={() => router.push("/all-animals")}
+  className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-bold shadow-lg text-xs sm:text-sm md:text-base"
+>
+  Explore Animals
+</button> */}
 
         </div>
       </div>
