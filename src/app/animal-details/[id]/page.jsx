@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAnimals } from "@/lib/get-data";
+import BuyButton from "@/component/BuyNowButton";
 
 
 const AnimalDetails = async ({ params }) => {
@@ -37,14 +38,14 @@ const AnimalDetails = async ({ params }) => {
               <p>Category:{animal.category}</p>
               <p className=" opacity-70 line-clamp-2">{animal.description}</p>
               </div>
-              <button>
+              {/* <button>
                   <Link 
                   href="/BuyForm"
                   className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md"
                  >
                   Buy Now</Link>
-                </button>
-              
+                </button> */}
+              <BuyButton animal={animal} />
             </div>
 
         

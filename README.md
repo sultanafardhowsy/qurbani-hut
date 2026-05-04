@@ -1,115 +1,89 @@
-🐄 Qurbani Hut - Modern Livestock Marketplace
-📌 Project Overview
-Qurbani Hut is a modern, responsive livestock marketplace designed for users to browse and book premium Qurbani animals such as cows and goats. The platform provides secure authentication, detailed animal listings, booking functionality, and user profile management with a visually appealing and unique design.
-This project focuses on providing a seamless user experience across all devices while ensuring modern development standards like environment variable security, route protection, and deployment optimization.
+# 🐄 Qurbani Hut
+### *Modern Livestock Marketplace*
 
-🌐 Live Website
-Live URL: https://qurbani-hut-rho.vercel.app/
-Repository: https://github.com/sultanafardhowsy/qurbani-hut
+**Qurbani Hut** is a premium, responsive digital marketplace designed to bridge the gap between tradition and technology. It offers a seamless experience for users to browse, compare, and book high-quality Qurbani animals like cows and goats from the comfort of their homes.
 
+---
 
-🎯 Core Features
-🏠 Home Page
-Premium responsive navbar
-Hero banner with call-to-action button
-Featured animals section (4 premium animals)
-Qurbani tips section
-Top breeds showcase
-Additional custom informative section
-Footer with:
-Contact details
-Social media links
-🐐 All Animals Page
-Browse all available animals
-Price sorting functionality
-Detailed animal cards
-Protected details page access
-📄 Animal Details Page (Private Route)
-Complete animal details
-Booking form with:
-Login required before booking
-Success toast notifications
-Auto-reset form after submission
-🔐 Authentication Features
-User Login
-Email/password authentication
-Google social login
-Error toast handling
-Redirect to home page after successful login
-Link to registration page
-User Registration
-Google signup option
-Redirect to login after successful registration
-Validation and error handling
-👤 User Dashboard Features
-My Profile Page
-User profile image
-Name
-Email
-Update Profile
-Update profile image
-Update display name
-Secure Better Auth integration
-✨ Extra Functionalities
-Fully responsive design
-Loading spinner while fetching data
-Custom 404 Not Found page
-Toast notifications
-Route protection
-Secure environment variables
-Modern animations using Lottie / Animate.css / React-Spring
-🛣️ Route Structure
-Public Routes
-/
-/animals
-/login
-/register
-Private Routes
-/details-page
-/my-profile
-/update-profile
-🛠️ Tech Stack
-Frontend
-Next.js
-React.js
-Tailwind CSS
-DaisyUI
-React Hook Form
-React Icons
-Authentication
-Better Auth
-Google OAuth
-Additional Packages
-Lottie / Animate.css / React-Spring
-React Toastify
-Deployment
-Vercel 
-🔒 Security
-🔒 Environment Variables
-Secure keys are stored using .env.local
+## 🚀 Project Overview
+This platform is built with a focus on **security, elegance, and performance**. By integrating modern authentication patterns and a thematic design, Qurbani Hut ensures that the sacred tradition of Qurbani is supported by a reliable and high-speed digital infrastructure.
 
-🚀 Installation Guide
-Clone the repository
-git clone your-repository-link
-Navigate to project folder
-cd qurbani-hut
-Install dependencies
-npm install
-Run development server
-npm run dev
+*   **Live Demo:** [qurbani-hut-rho.vercel.app](https://qurbani-hut-rho.vercel.app/)
+*   **Source Code:** [GitHub Repository](https://github.com/sultanafardhowsy/qurbani-hut)
 
-📱 Responsiveness
+---
 
+## 🛠️ Tech Stack
+| Layer | Technologies |
+| :--- | :--- |
+| **Framework** | Next.js, React.js |
+| **Styling** | Tailwind CSS, DaisyUI |
+| **Authentication** | Better Auth, Google OAuth |
+| **Forms** | React Hook Form |
+| **Animations** | Lottie, Animate.css, React-Spring |
+| **Deployment** | Vercel |
 
-Mobile Devices
+---
 
+## ✨ Core Features
 
-Tablets
+### 🏠 The Experience
+*   **Islamic-Inspired Aesthetics:** A premium gold-and-green theme that resonates with the cultural significance of the occasion.
+*   **Curated Listings:** Featured animal sections highlighting top breeds and premium livestock.
+*   **Educational Content:** Dedicated "Qurbani Tips" and breed showcases to help users make informed decisions.
 
+### 🔐 Security & User Flow
+*   **Protected Routes:** Booking and profile management are secured; only authenticated users can access sensitive animal details.
+*   **Social Integration:** One-click Google Login for a frictionless onboarding experience.
+*   **Dynamic Dashboard:** Users can manage their identity via the **My Profile** and **Update Profile** sections.
 
-Desktop
+### 🐐 Marketplace Functionality
+*   **Advanced Sorting:** Filter and sort animals by price to find options that fit any budget.
+*   **Interactive Booking:** A clean, multi-step booking form with automatic form resets and real-time toast notifications.
+*   **Full Responsiveness:** Optimized for everything from small-screen mobile devices to ultra-wide desktops.
 
+---
 
+## 🛣️ Route Architecture
+
+| Route | Type | Purpose |
+| :--- | :--- | :--- |
+| `/` | Public | Hero, Featured Animals, and Info Sections |
+| `/animals` | Public | Complete livestock marketplace with sorting |
+| `/login` / `/register` | Public | Access control and user onboarding |
+| `/details-page` | **Private** | Detailed specs and booking form |
+| `/my-profile` | **Private** | User information overview |
+| `/update-profile` | **Private** | Profile image and display name editing |
+
+---
+
+## ⚙️ Installation & Setup
+
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/sultanafardhowsy/qurbani-hut
+    cd qurbani-hut
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Configuration**
+    Create a `.env.local` file and add your credentials:
+    ```env
+    BETTER_AUTH_SECRET=your_secret
+    GOOGLE_CLIENT_ID=your_id
+    GOOGLE_CLIENT_SECRET=your_secret
+    ```
+
+4.  **Launch**
+    ```bash
+    npm run dev
+    ```
+
+---
 
 🎨 Unique Design Concept
 A premium livestock marketplace with:
@@ -130,34 +104,11 @@ Smooth animations
 Clean booking process
 
 
-📣 About This Project
-Qurbani Hut was built to simplify online livestock browsing and booking for Qurbani while offering a secure and modern marketplace experience.
-This project demonstrates:
 
+## 👨‍💻 Developed By
+**Sultana Fardhowsy**
+*   📧 **Email:** sfardhowsy@gmail.com
+*   💼 **LinkedIn:** [Sultana Fardhowsy Tamanna](https://linkedin.com/in/sultanafardhowsytamanna)
 
-Authentication systems
-
-
-Protected routes
-
-
-Responsive UI/UX
-
-
-Form handling
-
-
-Dynamic routing
-
-
-Deployment readiness
-
-
-
-👨‍💻 Developer: Sultana Fardhowsy
-
-📧 Email: sfardhowsy@gmail.com
-
-💼 LinkedIn: linkedin.com/in/sultanafardhowsytamanna
-
-
+> *"Simplifying traditions through modern code."*
+```
