@@ -12,15 +12,31 @@ const LoginPage = () => {
 
     const { register, handleSubmit,formState:{errors} } = useForm()
 
-    const handleLoginFunc = async(data) => {
-      const { data:res, error } = await authClient.signIn.email({
-    email: data.email, // required
-    password: data.password, // required
+//     const handleLoginFunc = async(data) => {
+//       const { data:res, error } = await authClient.signIn.email({
+//     email: data.email, // required
+//     password: data.password, // required
+//     rememberMe: true,
+//     callbackURL: "/",
+// });
+const handleLoginFunc = async (data) => {
+  const { data: res, error } = await authClient.signIn.email({
+    email: data.email,
+    password: data.password,
     rememberMe: true,
     callbackURL: "/",
-});
+  });
+
+  if (error) {
+    toast.error(error.message || "Login failed");
+  }
+
+  if (res) {
+    toast.success("Login successful 🎉");
+  }
+};
  
-    }
+    
 
 const handlGoogleSignIn = async () => {
   // show toast BEFORE redirect

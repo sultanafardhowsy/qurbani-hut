@@ -51,7 +51,7 @@ const AllAnimals = () => {
 
   return (
     <div className="p-8">
-      <h2 className="text-3xl font-bold mb-8 text-center">All Animals</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center text-[#B8941F]">All Animals</h2>
 
       {/* Sorting Dropdown */}
       <div className="flex justify-end mb-6">
@@ -102,7 +102,7 @@ const AllAnimals = () => {
 
               {session ? (
                 <Link href={`/animal-details/${animal.id}`}>
-                  <button className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
+                  <button onClick={() => toast("Animal details here")} className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-6 py-2.5 rounded-lg font-bold shadow-md">
                     View Details
                   </button>
                 </Link>

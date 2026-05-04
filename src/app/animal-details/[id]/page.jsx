@@ -1,6 +1,8 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { getAnimals } from "@/lib/get-data";
+
 
 const AnimalDetails = async ({ params }) => {
   const { id } = await params; 
