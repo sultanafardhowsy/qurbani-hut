@@ -6,13 +6,13 @@ import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { GrGoogle } from 'react-icons/gr';
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
 
     const { register, handleSubmit,formState:{errors} } = useForm()
 
     const handleLoginFunc = async(data) => {
-        console.log(data, "data");
       const { data:res, error } = await authClient.signIn.email({
     email: data.email, // required
     password: data.password, // required
@@ -22,12 +22,22 @@ const LoginPage = () => {
  
     }
 
-    const handlGoogleSignIn = async () => {
-   const data= await authClient.signIn.social({
-        provider: 'google'
-    })
-    console.log(data);
-  }
+//     const handlGoogleSignIn = async () => {
+//    const data= await authClient.signIn.social({
+//         provider: 'google'
+//     })
+
+//   }
+
+const handlGoogleSignIn = async () => {
+  // show toast BEFORE redirect
+  toast.loading("Redirecting to Google...");
+
+  await authClient.signIn.social({
+    provider: "google",
+    callbackURL: "/",
+  });
+};
    
 
     return (

@@ -14,7 +14,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter()
-  const handleLogout =async()=>{
+  const handleLogout = async () => {
     await authClient.signOut()
     router.push("/")
     router.refresh()
@@ -46,7 +46,7 @@ const Navbar = () => {
           >
             All Animals
           </Link>
-          
+
         </div>
 
         {/* Desktop User/Auth */}
@@ -78,7 +78,7 @@ const Navbar = () => {
               <button
                 className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] hover:from-[#B8941F] hover:to-[#C9A227] text-[#0F3D2E] px-3 sm:px-4 md:px-5 lg:px-6 py-2 rounded-lg font-bold shadow-md text-xs sm:text-sm md:text-base"
                 onClick={handleLogout}
-                
+
               >
                 Log Out
               </button>
@@ -142,14 +142,19 @@ const Navbar = () => {
                   {user.name}
                 </h2>
               </div>
-
+              <Link
+                href="/profile"
+                className="hover:text-[#C9A227] transition-colors"
+              >
+                Profile
+              </Link>
               <button
                 className="bg-gradient-to-r from-[#C9A227] to-[#D4AF37] text-[#0F3D2E] px-4 py-2 rounded-lg font-bold shadow-md text-sm"
                 onClick={async () => {
                   await authClient.signOut();
-                   window.location.href = "/";
+                  window.location.href = "/";
                   setMenuOpen(false);
-                  
+
                 }}
               >
                 Log Out

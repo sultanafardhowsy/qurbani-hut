@@ -5,6 +5,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { GrGoogle } from 'react-icons/gr';
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -22,23 +23,32 @@ const RegisterPage = () => {
         });
 
         if (error) {
-            alert(error.message);
+            // alert(error.message);
+            toast(error.message);
         }
 
         if (res) {
-            alert("Sign-up successful");
+            toast("Sign-up successful");
+            await authClient.signOut();
+
+      toast.success("Logged out successfully 👋");
             router.push("/login");
         }
     };
 
-    const handlGoogleSignIn = async () => {
-        const data = await authClient.signIn.social({
-            provider: 'google',
-            callbackURL: "/",
-        })
-        console.log(data);
-    }
+const handlGoogleSignIn = async () => {
+  try {
+    const data = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
 
+    toast.success("Login successful 🎉");
+
+  } catch (error) {
+    toast.error("Google sign-in failed ❌");
+  }
+};
 
     return (
         <div className='container mx-auto bg-[#C9A227] h-[80vh] flex justify-center items-center px-4 mt-10'>
@@ -80,7 +90,7 @@ const RegisterPage = () => {
                     </fieldset>
                     <div className='flex justify-evenly items-center'>
                         <button className="btn btn-neutral mt-4">Register</button>
-                        <button onClick={handlGoogleSignIn} className="btn btn-neutral mt-3"><GrGoogle /> Sign In With Google</button>
+                        <button onClick={handlGoogleSignIn}  className="btn btn-neutral mt-3"><GrGoogle /> Sign In With Google</button>
                     </div>
                 </form>
 
