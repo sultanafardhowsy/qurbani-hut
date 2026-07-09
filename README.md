@@ -61,7 +61,7 @@ This platform is built with a focus on **security, elegance, and performance**. 
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/sultanafardhowsy/qurbani-hut
+    git clone https://github.com/sultanafardhowsy/qurbani-hut.git
     cd qurbani-hut
     ```
 
